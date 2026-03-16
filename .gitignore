@@ -1,0 +1,15 @@
+# Ignore heavy model files
+*.pt
+
+# Ignore dataset and generated files
+data/images
+data/receipts
+data/payment_qr
+data/proof_images
+
+# Ignore python cache
+__pycache__/
+*.pyc
+
+# Ignore local uploads
+uploads/
