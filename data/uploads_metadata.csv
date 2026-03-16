@@ -1,0 +1,11 @@
+image_name,date_of_upload,location,geo_coordinates,expected_violation,status,uploader_role
+upload_01.jpg,2024-02-12,MG Road,"12.9725° N, 77.6042° E",No Helmet,Pending,Public
+upload_02.jpg,2024-04-09,Indiranagar Main,"12.9780° N, 77.6430° E",Signal Jump,Pending,Public
+upload_03.jpg,2024-07-15,Hebbal Flyover,"13.0180° N, 77.5890° E",Overspeed,Pending,Public
+upload_04.jpg,2024-10-05,Jayanagar Circle,"12.9295° N, 77.5811° E",Wrong Lane,Pending,Public
+upload_05.jpg,2025-01-18,Silk Board Junction,"12.9167° N, 77.6229° E",Stop Line Crossing,Pending,Public
+upload_06.jpg,2025-03-11,KR Market,"12.9632° N, 77.5769° E",Signal Jump,Pending,Public
+upload_07.jpg,2025-05-09,Koramangala Cross,"12.9365° N, 77.6257° E",No Helmet,Pending,Public
+upload_08.jpg,2025-07-21,Malleshwaram Signal,"13.0010° N, 77.5682° E",Overspeed,Pending,Public
+upload_09.jpg,2025-09-04,Rajajinagar Main,"12.9941° N, 77.5540° E",Wrong Lane,Pending,Public
+upload_10.jpg,2025-11-15,MG Road,"12.9746° N, 77.6051° E",Stop Line Crossing,Pending,Public

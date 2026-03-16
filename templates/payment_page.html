@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay Fine – Smart Violation</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    
+    <style>
+        body {
+            background: #0a1a33;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        .container-box {
+            margin-top: 50px;
+            background: rgba(255,255,255,0.08);
+            padding: 30px;
+            border-radius: 18px;
+        }
+        .option-card {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .option-card:hover {
+            background: rgba(0,123,255,0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container container-box">
+
+    <h2 class="mb-4">Pay Your Traffic Fine</h2>
+
+    <p>
+        <b>Vehicle:</b> {{ violation.vehicle_number }} <br>
+        <b>Violation:</b> {{ violation.violation_type }} <br>
+        <b>Fine Amount:</b> ₹{{ violation.fine_amount }}
+    </p>
+
+    <hr style="border-color:white;">
+
+    <h4>Select a Payment Method</h4>
+
+    <div class="row mt-4">
+
+        <!-- UPI -->
+        <div class="col-md-4 mb-3">
+            <div class="option-card text-center">
+                <h5>UPI Payment</h5>
+                <p>GPay, PhonePe, Paytm</p>
+                <a href="/fake_pay_success/{{ violation.index }}" class="btn btn-primary w-100">
+                    Pay via UPI
+                </a>
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div class="col-md-4 mb-3">
+            <div class="option-card text-center">
+                <h5>Credit/Debit Card</h5>
+                <p>Visa, MasterCard, Rupay</p>
+                <a href="/fake_pay_success/{{ violation.index }}" class="btn btn-danger w-100">
+                    Pay via Card
+                </a>
+            </div>
+        </div>
+
+        <!-- Net Banking -->
+        <div class="col-md-4 mb-3">
+            <div class="option-card text-center">
+                <h5>Net Banking</h5>
+                <p>All major banks</p>
+                <a href="/fake_pay_success/{{ violation.index }}" class="btn btn-success w-100">
+                    Net Banking
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <hr style="border-color:white;">
+
+    <!-- QR PAYMENT OPTIONAL -->
+    <div class="text-center mt-3">
+        <h5>OR Scan to Pay</h5>
+
+        {% if violation.qr_url %}
+            <img src="{{ violation.qr_url }}" width="180" class="mt-2">
+        {% else %}
+            <p>No QR available</p>
+        {% endif %}
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/fake_pay_success/{{ violation.index }}" class="btn btn-warning">
+            Complete Payment
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics – Smart Violation Management</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        /* ===== Background ===== */
+        body {
+            background: radial-gradient(circle at top, #0a1733, #040812 80%);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Floating neon circles */
+        .orb {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            background: rgba(0, 140, 255, 0.08);
+            filter: blur(70px);
+            border-radius: 50%;
+            top: 10%;
+            left: 5%;
+            animation: float 7s ease-in-out infinite alternate;
+        }
+
+        .orb2 {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: rgba(0, 255, 150, 0.08);
+            filter: blur(70px);
+            border-radius: 50%;
+            bottom: 10%;
+            right: 8%;
+            animation: float 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(-15px); }
+            100% { transform: translateY(15px); }
+        }
+
+        /* ===== Titles ===== */
+        .title {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .subtext {
+            text-align: center;
+            opacity: 0.8;
+            animation: fadeIn 1.4s ease-out;
+        }
+
+        /* ===== Card Layout ===== */
+        .chart-card {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 30px;
+            border-radius: 22px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            transition: 0.35s;
+            min-height: 200px;
+
+            /* For stagger animation */
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        /* Stagger delay */
+        .chart-card:nth-child(1) { animation-delay: .3s; }
+        .chart-card:nth-child(2) { animation-delay: .45s; }
+        .chart-card:nth-child(3) { animation-delay: .6s; }
+        .chart-card:nth-child(4) { animation-delay: .75s; }
+        .chart-card:nth-child(5) { animation-delay: .9s; }
+
+        .chart-card:hover {
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 0 25px rgba(0, 140, 255, 0.45);
+            border-color: rgba(0, 140, 255, 0.5);
+        }
+
+        .chart-card i {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            color: #7fd3ff;
+        }
+
+        /* ===== Buttons ===== */
+        .btn-back {
+            margin-top: 25px;
+            background: #0d6efd;
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 12px;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0,140,255,0.5);
+            background: #1b7bff;
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- BACKGROUND FLOATING LIGHTS -->
+<div class="orb"></div>
+<div class="orb2"></div>
+
+<div class="container">
+
+    <h2 class="title"><i class="bi bi-bar-chart"></i> Analytics Dashboard</h2>
+    <p class="subtext">Select a chart to analyze violation patterns</p>
+
+    <div class="row mt-5">
+
+        <!-- Violations by Type -->
+        <div class="col-md-4 mb-4">
+            <a href="/analysis/type">
+                <div class="chart-card">
+                    <i class="bi bi-clipboard-data"></i>
+                    <h5>Violations by Type</h5>
+                </div>
+            </a>
+        </div>
+
+        <!-- Status -->
+        <div class="col-md-4 mb-4">
+            <a href="/analysis/status">
+                <div class="chart-card">
+                    <i class="bi bi-ui-checks-grid"></i>
+                    <h5>Status Distribution</h5>
+                </div>
+            </a>
+        </div>
+
+        <!-- Fine Amount -->
+        <div class="col-md-4 mb-4">
+            <a href="/analysis/fine">
+                <div class="chart-card">
+                    <i class="bi bi-cash-coin"></i>
+                    <h5>Fine Amount Distribution</h5>
+                </div>
+            </a>
+        </div>
+
+        <!-- Violations Over Time -->
+        <div class="col-md-4 mb-4">
+            <a href="/analysis/time">
+                <div class="chart-card">
+                    <i class="bi bi-clock-history"></i>
+                    <h5>Violations Over Time</h5>
+                </div>
+            </a>
+        </div>
+
+        <!-- Location -->
+        <div class="col-md-4 mb-4">
+            <a href="/analysis/location">
+                <div class="chart-card">
+                    <i class="bi bi-geo-alt"></i>
+                    <h5>Violations by Location</h5>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="text-center">
+        <a href="/home">
+            <button class="btn-back"><i class="bi bi-arrow-left"></i> Back to Dashboard</button>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
