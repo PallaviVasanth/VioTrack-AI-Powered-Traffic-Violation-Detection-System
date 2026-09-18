@@ -693,8 +693,8 @@ def pay_fine_page(index):
 
     upi_string = (
         f"upi://pay?"
-        f"pa=pallavi@oksbi&"
-        f"pn=Pallavi&"
+        f"pa=user@oksbi&"
+        f"pn=User&"
         f"am={amount}&"
         f"cu=INR"
     )
