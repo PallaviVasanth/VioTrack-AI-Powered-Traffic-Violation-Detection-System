@@ -64,8 +64,8 @@ from email.mime.text import MIMEText
 
 def send_receipt_email(to_email, row, pdf_path, index):
     try:
-        sender = "iampallavivasanth77@gmail.com"
-        password = "prcw mmvb nauj kzfi"
+        sender = "example@gmail.com"
+        password = "your_google_app_passwordi"
 
         msg = MIMEMultipart()
         msg["From"] = sender
