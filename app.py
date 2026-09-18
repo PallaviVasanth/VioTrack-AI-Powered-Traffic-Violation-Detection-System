@@ -49,8 +49,8 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
-EMAIL_SENDER = "iampallavivasanth77@gmail.com"
-EMAIL_PASSWORD = "prcw mmvb nauj kzfi"  # GOOGLE APP PASSWORD
+EMAIL_SENDER = "example@gmail.com"
+EMAIL_PASSWORD = "your_google_app_password"  # GOOGLE APP PASSWORD
 
 # PDF + QR
 from reportlab.pdfgen import canvas
